@@ -1,20 +1,3 @@
-// Mensaje dinámico de bienvenida y fecha
-const mensajeBienvenida = document.getElementById('mensajeBienvenida');
-const fecha = document.getElementById('fecha');
-
-const hora = new Date().getHours();
-let saludo = "";
-
-if (hora < 12) saludo = "¡Buenos días! Bienvenido a la página.";
-else if (hora < 18) saludo = "¡Buenas tardes! Esperamos que disfrutes tu visita.";
-else saludo = "¡Buenas noches! Gracias por visitarnos.";
-
-mensajeBienvenida.textContent = saludo;
-
-// Fecha automática
-const hoy = new Date();
-fecha.textContent = `Fecha de creación: ${hoy.toLocaleDateString()}`;
-
 // Envío del formulario
 document.getElementById('registroForm').addEventListener('submit', async (e) => {
   e.preventDefault();
