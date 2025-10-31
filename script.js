@@ -1,3 +1,4 @@
+
 document.getElementById('registroForm').addEventListener('submit', async (e) => {
   e.preventDefault();
   const mensaje = document.getElementById('mensaje');

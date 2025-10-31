@@ -1,5 +1,14 @@
-body {
+
+* {
+  box-sizing: border-box;
   margin: 0;
+  padding: 0;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
   background-color: #f0f0f0;
   color: #333;
   font-family: Arial, sans-serif;
@@ -7,108 +16,97 @@ body {
 
 
 header {
-  background: linear-gradient(90deg, #7b1fa2 0%, #9c27b0 100%);
+  background:  #7b1fa2;
   color: #ffffff;
-  text-align: left;
-  padding: 20px;
+  padding: 16px;
+}
+
+header h1 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
 }
 
 nav ul {
   list-style: none;
-  padding: 0;
   display: flex;
-  justify-content: left;
-  gap: 20px;
-  margin: 0;
+  flex-wrap: wrap;
+  gap: 15px;
+  padding: 0;
 }
+
 nav a {
   color: #ffffff;
   text-decoration: none;
   font-weight: bold;
   font-size: 0.9rem;
+  transition: color 0.2s;
 }
 
+nav a:hover {
+  color: #ffb266;
+}
 
 .cards {
   display: flex;
   justify-content: space-between;
-  align-items: flex-start;
-  gap: 10px;
+  align-items: stretch;
+  gap: 20px;
   padding: 20px;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
 }
-
 
 .card {
+  flex: 1 1 48%;
   padding: 20px;
   border-radius: 10px;
+  color: #ffffff;
   box-shadow: 2px 2px 10px rgba(0,0,0,0.12);
-  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: left;
+}
+
+.card.principal {
+  background: linear-gradient(135deg, #7b1fa2, #9c27b0);
+}
+
+.card.segunda{
+  color: black;
+  background-color: aqua ;
+  flex-direction: row;
+  font-size: 17px;
+  border: 10px;
+  width: 500px;
+  height: 500px;
+  cursor: pointer;
+}
+
+.card.segunda:hover{
+  background-color: tomato;
+
+}
+
+.card.complementaria {
+  background: #ff7a18;
 }
 
 
-.card.principal,
-.principal {
-  flex: 0 0 52%;
-  max-width: 65%;
-  min-width: 300px;
-  background: #7b1fa2;
-  color: #ffffff;
-  border-radius: 10px;
-}
-
-.card.complementaria,
-.secundaria {
-  flex: 0 0 40%;
-  max-width: 65%;
-  min-width: 300px;
-  background: linear-gradient(135deg, #ff7a18 60%, #ffb266 100%);
-  color: #ffffff;
-  border-radius: 10px;
-}
-
-
-.card.complementaria.wide {
-  flex: 1 1 65%;
-  max-width: 65%;
-  min-width: 300px;
-}
-
-
-@media (max-width: 800px) {
-  .cards {
-    flex-direction: column;
-    gap: 12px;
-  }
-  .card.principal,
-  .card.complementaria,
-  .principal,
-  .secundaria {
-    flex: none;
-    width: 100%;
-    max-width: none;
-    min-width: 0;
-  }
-}
-
-
-@media (max-width: 768px) {
-  .principal { order: 2; }
-  .secundaria { order: 1; }
-}
-
-
-.tabla, .lista, .formulario, .definiciones {
+.tabla {
   padding: 20px;
-  background-color: #f7f7f8;
   margin: 20px;
-  border-radius: 8px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.tabla h3 {
+  margin-bottom: 10px;
 }
 
 table {
   width: 100%;
   border-collapse: collapse;
-  background: white;
   border-radius: 8px;
   overflow: hidden;
 }
@@ -121,97 +119,104 @@ th, td {
 }
 
 thead {
-  background: rgba(123,31,162,0.95); 
+  background: #7b1fa2; 
   color: #fff;
 }
 
-tfoot {
-  background: rgba(255,159,67,0.95); 
-  color: #fff;
-  font-weight: bold;
+.lista, .formulario {
+  padding: 20px;
+  margin: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
 
-.lista ol {
-  list-style-type: lower-alpha;
-  margin-left: 1.2em;
-}
 
 form {
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: 10px;
 }
 
-input, textarea, select, button {
-  padding: 8px;
-  border: 1px solid #cfcfcf;
-  border-radius: 4px;
-  box-sizing: border-box;
-  font-size: 0.95rem;
+label {
+  font-weight: bold;
 }
 
-form input, form textarea, form select {
+input, select, button {
   width: 100%;
-  margin-top: 5px;
-}
-
-form select {
-  appearance: none;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  background-color: #fff;
-  background-image:linear-gradient(45deg, transparent 50%, #666 50%),linear-gradient(135deg, #666 50%, transparent 50%);
-  background-position: calc(100% - 18px) calc(1.1em + 2px), calc(100% - 13px) calc(1.1em + 2px);
-  background-size: 6px 6px, 6px 6px;
-  background-repeat: no-repeat;
-  padding-right: 36px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
 }
 
 button {
   background: linear-gradient(90deg, #7b1fa2 0%, #9c27b0 60%);
-  color: #ffffff;
+  color: white;
   border: none;
-  padding: 8px 14px;
-  border-radius: 6px;
   cursor: pointer;
-  font-weight: 700;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.12);
-  transition: transform .12s ease, box-shadow .12s ease, opacity .12s ease;
-  align-self: flex-start; 
+  transition: transform 0.15s, box-shadow 0.15s;
 }
 
 button:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 18px rgba(0,0,0,0.16);
-  opacity: 0.98;
-}
-
-button:active {
-  transform: translateY(0);
-  box-shadow: 0 4px 10px rgba(0,0,0,0.10);
-}
-
-button:focus {
-  outline: 3px solid rgba(156,39,176,0.18);
-  outline-offset: 2px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
 }
 
 footer {
   background-color: #2f2f2f;
   color: white;
   text-align: center;
-  font-family: monospace;
-  padding: 12px 0;
-  box-shadow: 0 -2px 5px rgba(0,0,0,0.2);
-  margin-top: 1rem;
+  padding: 12px 8px;
+  font-size: 0.9rem;
 }
 
-.card.principal h2 {
-  margin: 0 0 8px 0;
-  font-size: 1.05rem;
+@media (max-width: 768px) {
+  header h1 {
+    font-size: 1rem;
+  }
+
+  nav ul {
+    justify-content: center;
+    gap: 8px;
+  }
+
+  .cards {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .card {
+    flex: none;
+    width: 100%;
+  }
+
+  .tabla, .lista, .formulario {
+    margin: 10px;
+    padding: 15px;
+  }
+
+  th, td {
+    font-size: 0.9rem;
+  }
 }
 
-.card.complementaria h1 {
-  margin: 0 0 8px 0;
-  font-size: 1.2rem;
+@media (max-width: 480px) {
+  header h1 {
+    font-size: 0.9rem;
+    text-align: center;
+  }
+
+  nav a {
+    font-size: 0.8rem;
+  }
+
+  .tabla, .lista, .formulario, .cards {
+    margin: 8px;
+    padding: 12px;
+  }
+
+  .card {
+    font-size: 0.9rem;
+  }
 }
