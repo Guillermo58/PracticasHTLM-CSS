@@ -18,14 +18,14 @@ document.getElementById('registroForm').addEventListener('submit', async (e) => 
     });
 
     if (response.ok) {
-      mensaje.textContent = "✅ Datos enviados correctamente.";
+      mensaje.textContent = "Datos enviados correctamente.";
       mensaje.style.color = "green";
       e.target.reset();
     } else {
       throw new Error("Error al enviar los datos");
     }
   } catch (error) {
-    mensaje.textContent = "❌ Ocurrió un error al enviar el formulario.";
+    mensaje.textContent = "Ocurrió un error al enviar el formulario.";
     mensaje.style.color = "red";
   }
 });
