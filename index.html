@@ -1,85 +1,94 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Test de Práctica HTML + CSS + JS - Variante 3</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Test de Práctica HTML + CSS + JS - Variante Responsive</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <h1>Test de Práctica HTML + CSS + JS</h1>
-    <nav>
-      <ul>
-        <li><a href="#">Principal</a></li>
-        <li><a href="#">Complementaria</a></li>
-        <li><a href="#">Tabla</a></li>
-        <li><a href="#">Definiciones</a></li>
-        <li><a href="#">Formulario</a></li>
-      </ul>
-    </nav>
+  <header class="site-header">
+    <div class="header-inner">
+      <h1>Test de Práctica HTML + CSS + JS</h1>
+      <nav class="main-nav" aria-label="Navegación principal">
+        <ul>
+          <li><a href="#">Principal</a></li>
+          <li><a href="#">Complementaria</a></li>
+          <li><a href="#">Tabla</a></li>
+          <li><a href="#">Definiciones</a></li>
+          <li><a href="#">Formulario</a></li>
+        </ul>
+      </nav>
+    </div>
   </header>
 
-  <section class="cards">
-    <div class="card principal">
-      <h2>Card Principal</h2>
-      <p>Esta carta tiene un título más grande, con fondo degradado azul-verde y sombra.</p>
-    </div>
-    <div class="card complementaria">
-      <h2>Card Complementaria</h2>
-      <p>Esta carta tiene un título más pequeño, con fondo degradado amarillo-naranja y borde inferior rojo.</p>
-    </div>
-  </section>
+  <main class="page">
+    <section class="cards">
+      <article class="card principal" aria-labelledby="title-principal">
+        <h2 id="title-principal">Card Principal</h2>
+        <p>Card mas pequeña, fondo degradado naranja, borde redondeado.</p>
+      </article>
 
-  <section class="tabla">
-    <h2>Tabla de Proyectos</h2>
-    <table>
-      <thead>
-        <tr>
-          <th>Proyecto</th>
-          <th>Lider</th>
-          <th>Duración</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr><td>App Web</td><td>María</td><td>6 semanas</td></tr>
-        <tr><td>Landing Page</td><td>Carlos</td><td>3 semanas</td></tr>
-        <tr><td>API Rest</td><td>Lucía</td><td>5 semanas</td></tr>
-        <tr><td colspan="3"><strong>Total de Proyecto: 3</strong></td></tr>
-      </tbody>
-    </table>
-  </section>
-  <section class="lista">
-    <h2>Definiciones de HTML, CSS Y JavaScript</h2>
-      <p><strong>HTML</strong> es el lenguaje de marcado para estructurar paginas web.</p>
-      <p><strong>CSS</strong> es el lenguaje para dar estilo y apariencia a los elementos de la pagina.</p>
-      <p><strong>JavaScript</strong> es el lenguaje que permite interactividad y manipulacion del contenido en la web.</p>
-  </section>
+      <article class="card complementaria" aria-labelledby="title-complementaria">
+        <h2 id="title-complementaria">Card Complementaria</h2>
+        <p>Card mas grande, fondo degradado purpura, borde redondeado.</p>
 
-  <section class="formulario">
-    <h2>Formulario de Contacto</h2>
-    <form>
-      <label>Nombre:<br><input type="text" name="nombre"></label><br><br>
-      <label>Correo Electrónico:<br><input type="email" name="correo"></label><br><br>
-      <label>Edad<br><input type="number" name="edad"></label><br><br>
-      <label>Teléfono<br><input type="number" name="telefono"></label><br><br>
-      <label for="genero">Género/Sexo:</label><br>
-      <label>
-        <select id="genero" name="genero">
-          <option value="" disabled selected>Seleccione...</option>
-          <option value="masculino">Masculino</option>
-          <option value="femenino">Femenino</option>
-          <option value="otro">Otro</option>
-          <option value="no-decir">Prefiero no decirlo</option>
-        </select>
-      </label><br><br>
-      <button type="submit">Enviar</button>
-    </form>
-  </section>
+      </article>
+    </section>
+
+    <section class="tabla">
+      <h3>Tabla de Proyectos</h3>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Proyecto</th>
+              <th>Líder</th>
+              <th>Duración</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>App Web</td><td>María</td><td>6 semanas</td></tr>
+            <tr><td>Landing Page</td><td>Carlos</td><td>3 semanas</td></tr>
+            <tr><td>API Rest</td><td>Lucía</td><td>5 semanas</td></tr>
+            <tr><td colspan="3"><strong>Total de Proyectos: 3</strong></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="lista">
+      <h3>Definiciones de HTML, CSS y JavaScript</h3>
+      <p><strong>HTML</strong> es el lenguaje de marcado para estructurar páginas web.</p>
+      <p><strong>CSS</strong> es el lenguaje para dar estilo y apariencia a los elementos de la página.</p>
+      <p><strong>JavaScript</strong> es el lenguaje que permite interactividad y manipulación del contenido en la web.</p>
+    </section>
+
+    <section class="formulario">
+      <h3>Formulario de Contacto</h3>
+      <form>
+        <label>Nombre:<br><input type="text" name="nombre" /></label>
+        <label>Correo Electrónico:<br><input type="email" name="correo" /></label>
+        <label>Edad:<br><input type="number" name="edad" /></label>
+        <label>Teléfono:<br><input type="tel" name="telefono" /></label>
+        <label>Género/Sexo:<br>
+          <select name="genero" id="genero">
+            <option value="" disabled selected>Seleccione...</option>
+            <option value="masculino">Masculino</option>
+            <option value="femenino">Femenino</option>
+            <option value="otro">Otro</option>
+            <option value="no-decir">Prefiero no decirlo</option>
+          </select>
+        </label>
+        <div class="form-actions">
+          <button type="submit">Enviar</button>
+        </div>
+      </form>
+    </section>
+  </main>
+
   <footer id="footer">
-  <p>Fecha de creacion: 10/27/2025 - Bienvenido a la practica .</p>
-</footer>
-<script src="script.js"></script>
-
+    <p>Fecha de creación: 10/27/2025 - Bienvenido a la práctica.</p>
+  </footer>
 </body>
 </html>
